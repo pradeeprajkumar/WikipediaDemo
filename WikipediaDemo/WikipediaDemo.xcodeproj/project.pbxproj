@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		28BA596D216A25310092C090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA596C216A25310092C090 /* AppDelegate.swift */; };
-		28BA596F216A25320092C090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA596E216A25320092C090 /* ViewController.swift */; };
-		28BA5972216A25320092C090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BA5970216A25320092C090 /* Main.storyboard */; };
 		28BA5974216A25330092C090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BA5973216A25330092C090 /* Assets.xcassets */; };
 		28BA5977216A25330092C090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BA5975216A25330092C090 /* LaunchScreen.storyboard */; };
 		28BA5982216A25330092C090 /* WikipediaDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA5981216A25330092C090 /* WikipediaDemoTests.swift */; };
 		28BA598D216A25330092C090 /* WikipediaDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA598C216A25330092C090 /* WikipediaDemoUITests.swift */; };
+		28BA59A8216A2B440092C090 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA59A7216A2B440092C090 /* Router.swift */; };
+		28BA59AB216A2BBD0092C090 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28BA59A9216A2BBD0092C090 /* Search.storyboard */; };
+		28BA59AD216A2CE50092C090 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA59AC216A2CE50092C090 /* SearchViewController.swift */; };
+		28BA59AF216A2D010092C090 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BA59AE216A2D010092C090 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +38,6 @@
 /* Begin PBXFileReference section */
 		28BA5969216A25310092C090 /* WikipediaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikipediaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BA596C216A25310092C090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28BA596E216A25320092C090 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		28BA5971216A25320092C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28BA5973216A25330092C090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28BA5976216A25330092C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28BA5978216A25330092C090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +47,10 @@
 		28BA5988216A25330092C090 /* WikipediaDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikipediaDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BA598C216A25330092C090 /* WikipediaDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaDemoUITests.swift; sourceTree = "<group>"; };
 		28BA598E216A25330092C090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28BA59A7216A2B440092C090 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		28BA59AA216A2BBD0092C090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		28BA59AC216A2CE50092C090 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		28BA59AE216A2D010092C090 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,8 @@
 		28BA596B216A25310092C090 /* WikipediaDemo */ = {
 			isa = PBXGroup;
 			children = (
-				28BA596C216A25310092C090 /* AppDelegate.swift */,
-				28BA596E216A25320092C090 /* ViewController.swift */,
-				28BA5970216A25320092C090 /* Main.storyboard */,
-				28BA5973216A25330092C090 /* Assets.xcassets */,
-				28BA5975216A25330092C090 /* LaunchScreen.storyboard */,
-				28BA5978216A25330092C090 /* Info.plist */,
+				28BA599B216A2A0D0092C090 /* Common */,
+				28BA599A216A2A030092C090 /* Search module */,
 			);
 			path = WikipediaDemo;
 			sourceTree = "<group>";
@@ -123,6 +123,116 @@
 				28BA598E216A25330092C090 /* Info.plist */,
 			);
 			path = WikipediaDemoUITests;
+			sourceTree = "<group>";
+		};
+		28BA599A216A2A030092C090 /* Search module */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59A0216A2A360092C090 /* ViewModel */,
+				28BA599F216A2A330092C090 /* UI */,
+				28BA599E216A2A2B0092C090 /* Network */,
+				28BA599D216A2A250092C090 /* Model */,
+				28BA599C216A2A1C0092C090 /* Constants */,
+			);
+			path = "Search module";
+			sourceTree = "<group>";
+		};
+		28BA599B216A2A0D0092C090 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59A3216A2A550092C090 /* Resources */,
+				28BA59A2216A2A4E0092C090 /* Router */,
+				28BA59A1216A2A460092C090 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		28BA599C216A2A1C0092C090 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		28BA599D216A2A250092C090 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28BA599E216A2A2B0092C090 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		28BA599F216A2A330092C090 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59A6216A2ACB0092C090 /* ViewController */,
+				28BA59A5216A2AC20092C090 /* TableViewCells */,
+				28BA59A4216A2AB90092C090 /* Storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		28BA59A0216A2A360092C090 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59AE216A2D010092C090 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28BA59A1216A2A460092C090 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		28BA59A2216A2A4E0092C090 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59A7216A2B440092C090 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		28BA59A3216A2A550092C090 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28BA5975216A25330092C090 /* LaunchScreen.storyboard */,
+				28BA596C216A25310092C090 /* AppDelegate.swift */,
+				28BA5978216A25330092C090 /* Info.plist */,
+				28BA5973216A25330092C090 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		28BA59A4216A2AB90092C090 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59A9216A2BBD0092C090 /* Search.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		28BA59A5216A2AC20092C090 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		28BA59A6216A2ACB0092C090 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28BA59AC216A2CE50092C090 /* SearchViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,8 +340,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				28BA5977216A25330092C090 /* LaunchScreen.storyboard in Resources */,
+				28BA59AB216A2BBD0092C090 /* Search.storyboard in Resources */,
 				28BA5974216A25330092C090 /* Assets.xcassets in Resources */,
-				28BA5972216A25320092C090 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +366,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28BA596F216A25320092C090 /* ViewController.swift in Sources */,
+				28BA59AD216A2CE50092C090 /* SearchViewController.swift in Sources */,
+				28BA59A8216A2B440092C090 /* Router.swift in Sources */,
+				28BA59AF216A2D010092C090 /* SearchViewModel.swift in Sources */,
 				28BA596D216A25310092C090 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,20 +405,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		28BA5970216A25320092C090 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				28BA5971216A25320092C090 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		28BA5975216A25330092C090 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				28BA5976216A25330092C090 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		28BA59A9216A2BBD0092C090 /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28BA59AA216A2BBD0092C090 /* Base */,
+			);
+			name = Search.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -430,9 +542,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 823XM8WAY9;
-				INFOPLIST_FILE = WikipediaDemo/Info.plist;
+				INFOPLIST_FILE = WikipediaDemo/Common/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,9 +561,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 823XM8WAY9;
-				INFOPLIST_FILE = WikipediaDemo/Info.plist;
+				INFOPLIST_FILE = WikipediaDemo/Common/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
